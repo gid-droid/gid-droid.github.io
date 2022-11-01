@@ -1,0 +1,936 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Ecommerce site</title>
+		<link rel='stylesheet' href='font-awesome4/font-awesome4/css/font-awesome.min.css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			@font-face {
+				font-family: 'OpenSans';
+				src: url('OpenSans-Medium.ttf') format('truetype');
+			}
+			
+			body {font-family: OpenSans, Serif;}
+			
+			body, article, main, div, section, h1, h2, h3, h4,p {margin:0;padding:0;}
+			
+			
+			header {
+				display:flex;flex-direction:row;
+				padding: 5px 5px;
+				background-color:black;
+				color:white;
+			}
+			
+			header img.logo {
+				 width: 70px;height:50px;
+			}
+			header a {
+				 margin-right: auto;
+			}
+			
+			header div.form, section div.form {
+				display: flex;flex-direction:row;margin-right:auto;
+				z-index:2;
+			}
+			
+			
+			header div.form select { 
+				padding: 10px;
+				font-size: 15px;
+				width: auto;
+				background-color:rgb(240,240,240);
+			}
+			
+			header div.form select option {background-color:white;}
+			
+			header div.form input {
+				margin:0;
+				padding:10px;
+				font-size: 20px;
+				width:300px;
+			}
+			
+			header div.form button, section div.form button{
+				padding:10px;
+				font-size: 20px;
+			}
+			
+			section div.form {display:none;justify-content:center;}
+			
+			
+			section div.form input {
+				margin:0;
+				padding:10px;
+				font-size: 20px;
+				width:100%;
+			}
+			
+			header div.link {
+				display: flex;
+				flex-direction:row;
+				font-size: 20px;
+				margin-right: auto;
+			}
+			
+			header div.link a {
+				padding: 10px;
+			}
+			
+			
+			
+			header div.link i.i {
+				padding: 10px;
+				border: 1px solid white;
+			}
+			
+			header div.link i.i:hover {
+				background-color:white;color:black;
+			}
+			
+			header div.link i.i:active {
+				background-color:black;color:white;
+			}
+			
+			header div.link i.fa-shopping-cart {padding:0;}
+			
+			header div.link.last {margin-right: 0;}
+			
+			nav {
+				display:flex;flex-direction:row;flex-wrap:nowrap;
+				justify-content: center;
+				color:white;background-color:rgba(0,0,0,0.8);
+				
+			}
+			
+			nav a {
+				font-size: 17px;
+				padding: 7px;margin-right:5px;
+			}
+			
+			nav a.categories {cursor: pointer;}
+			
+			h2 {font-size: 25px;}
+			h3 {font-size: 20px;}
+			
+			
+			main {background-color: silver;padding-bottom:10px;}
+			
+			section.deals {
+				display:flex;flex-direction:row;
+				overflow-x: scroll;
+			}
+			
+			section.deals img {
+				width: 100%;height:50vh;
+				flex-shrink:0;
+			}
+			
+			section.featured {
+				display:flex;flex-direction:row;flex-wrap:nowrap;
+				margin:10px;
+				background-color:silver;padding-bottom:10px;
+			}
+			
+			section.featured div {
+				flex-shrink:0;background-color:white;
+				margin-right:auto;width:31%;padding:7px;
+			}
+			
+			section.featured div img{
+				width: 100%;height:40vh;
+			}
+			
+			section.featured div h2 {
+				margin:0;
+				margin: 10px 0 10px 5px;
+			}
+			
+			section.featured div a {
+				font-size: 15px;
+				text-decoration:underline;
+			}
+			
+			section.foryou {padding: 10px;background-color:white;}
+			
+			section.foryou h2 {margin: 10px 0 10px 0;}
+			
+			section.foryou section {display:flex;flex-direction:row;flex-wrap:wrap;background-color:silver;padding:10px 10px 0 10px;}
+			
+			section.foryou section div.content {
+				margin-right:auto;
+				background-color:white;
+				width:49%;margin-bottom:7px;
+				display:flex;flex-direction:row;flex-wrap:nowrap;
+			}
+			
+			section.foryou section div.content img { width:100px;height:100px;}
+			
+			section.foryou section div.content div {
+				padding-left:20px;
+				overflow:hidden;
+			}
+			
+			section.foryou section div.content div p.off span{display:inline-block;font-size: 16px;padding:4px;}
+			
+			section.foryou section div.content div p.price {font-size: 30px;font-weight:900;margin:5px 0px;}
+			
+			section.foryou section div.content div p.price small {text-decoration: line-through;}
+			
+			section.foryou section div.content div p.desc {
+				font-size: 16px;
+				padding:4px;
+				white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+			}
+			
+			section.categories {
+				background-color:white;
+				margin: 10px;
+			}
+			
+			section.categories h2 {
+				padding: 20px 10px;
+			}
+			
+			section.categories div {
+				display: flex;flex-direction:row;flex-wrap:nowrap;
+				overflow-x:Scroll;
+				
+			}
+			
+			section.categories div a{
+				margin-right: 10px;
+				text-align:center;
+			}
+			
+			section.categories div a h3 {
+				margin: 10px 0px;
+			}
+			
+			section.categories div a img {
+				width: 200px;
+				height:200px;
+				border: 1px solid black;
+				border-radius: 50%;
+			}
+			section.filters {
+				padding: 0px 10px 0px 10px;
+				background-color:white;
+			}
+			
+			section.filters h2 {
+				padding: 20px 10px;
+			}
+			
+			section.filters div.link {
+				display:flex;flex-direction:row;flex-wrap:nowrap;
+				border-bottom: 1px solid black;margin-bottom:10px;
+			}
+			
+			section.filters div.link h3 {
+				flex-shrink:0;
+				margin:0 20px 2px 0px;
+			}
+			section.filters section h3.title {display: none;}
+			
+			section.filters section div {
+				display:flex;flex-direction:row;flex-wrap:wrap;
+			}
+			
+			section.filters section div.b,section.filters section div.c {display:none;}
+			
+			section.filters section div img {
+				width:30%;height:30vh;
+				margin-right: auto;
+				margin-bottom:10px;
+			}
+			
+			
+			footer.a {
+				display:flex;flex-direction:row;flex-wrap:nowrap;
+				background-color:black;color:white;
+				padding:20px;
+			}
+			
+			footer.a section {
+				margin-right: auto;
+			}
+			
+			footer.a section h2 {margin-bottom:10px;}
+			
+			footer.a section p a {font-size: 17px;}
+			
+			footer.a section p {margin-bottom: 5px;}
+			
+			footer.b {
+				justify-content: center;
+				display:flex;flex-direction:row;
+				color:white;background-color:rgba(0,0,0,0.8);
+				padding:20px;border-top:1px solid white;
+			}
+			
+			footer.b a, footer.b div {
+				padding: 5px;margin-right:5px;
+				border: 1px solid white;
+				font-size:20px;
+			}
+			
+			footer.c {color:white;background-color:black;}
+			
+			footer.c section.otherservices {border-top: 1px solid white;}
+			
+			footer.c section.otherservices h2 {
+				text-align: center;
+				margin-bottom:10px;
+			}
+			
+			footer.c section.otherservices div {
+				display:flex;flex-direction:row;flex-wrap:wrap;
+			}
+			
+			footer.c section.otherservices div a {margin:auto;margin-bottom:5px;}
+			
+			footer.c section.otherservices div img {
+				width:100px;height:100px;
+			}
+			
+			footer.c section.privacy {
+				font-size: 14px;padding:10px;
+			}
+			
+			footer.c section.privacy div {
+				display:flex;flex-direction:row;justify-content:center;
+				margin:10px 0 5px 0;
+			}
+			
+			footer.c section.privacy div a {margin-right:10px;}
+			
+			footer.c section.privacy p {text-align: center;border: 1px solid black;margin:10px 0 5px 0;}
+			
+			.fa-bars {display: none;}
+			
+			.comingsoon {cursor:pointer;}
+			header a.comingsoon {cursor:pointer;text-decoration:underline;}
+			header a.comingsoon:hover {background-color: white;color:black;}
+		</style>
+	</head>
+	<body>
+		<div class='close' style='display:none;position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,0.5);'></div>
+		<div class='close2' style='z-index:3;display:none;position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,0.5);'></div>
+		<header>
+			<i class='fa fa-bars'></i>
+			<a href='ecommerce-home.html'><img class='logo' src='ecommerce1.png'> </a>
+			<div class='form'>
+				<select>
+					<option>All</option>
+					<option>Electronics</option>
+					<option>Fashion</option>
+					<option>Furniture</option>
+					<option>Handmade</option>
+					<option>Healthcare</option>
+					<option>Services</option>
+					<option>Toys</option>
+				</select>
+				
+				<input type='search'>
+				<button><i class='fa fa-search'></i></button>
+			</div>
+			
+			<div class='link country'>
+				<a class='comingsoon'>Nigeria</a> 
+				<i class='i fa fa-caret-down'></i>
+			</div>
+			<div class='link language'> 
+				<a class='comingsoon'>English</a> 
+				<i class='i fa fa-caret-down'></i>
+			</div>
+			<div class='link user'>
+				<a class='comingsoon'><i class='fa fa-user'></i></a> 
+				<i class='i fa fa-caret-down down'></i>
+			</div>
+			<div class='link last cart'>	
+				<a class='comingsoon'><i class='fa fa-shopping-cart' >&nbsp;0</i></a>
+			</div>
+		</header>
+		<nav>
+			<a class='categories'>categories &nbsp;<i class='fa fa-caret-down'></i></a>
+			<a class='comingsoon'>Deals</a>
+			<a class='comingsoon'>Gift card</a>
+			<a class='comingsoon'>Shopping list</a>
+			<a class='comingsoon'>Become a seller</a>
+			<a class='comingsoon'>Customer service</a>
+		</nav>
+		
+		<section style='position:relative;background-color:white;'>
+			<div class='form'>
+				<input type='search'>
+				<button><i class='fa fa-search'></i></button>
+			</div>
+		</section>
+		
+		<section class='countrydata' style='display:none;'>
+			<style>
+				section.countrydata {
+					position:fixed;
+					border: 1px solid green;
+					width:40%;margin-left:40%;
+					background-color:white;
+					z-index:2;
+				}
+				section.countrydata h3 {padding:10px;background-color:silver;}
+				
+				section.countrydata section {padding:10px;}
+				
+				section.countrydata p, section.countrydata a  {font-size: 17px;margin-bottom:10px;}
+				section.countrydata a.signin  {
+					text-align:center;
+					display:block;
+					color:white;background-color:black;
+					padding:5px;border-radius:10px;
+				}
+				section.countrydata p.enterzip, section.countrydata p.or {border-bottom:1px solid black;text-align:center;margin-bottom:20px;}
+				section.countrydata p.enterzip span, section.countrydata p.or span {background-color: white;position:relative;top:10px;padding:0 10px;}
+				section.countrydata div.zipdata {display:flex;flex-direction:row;flex-wrap:nowrap;}
+				section.countrydata div.zipdata input {width:80%;padding:5px;margin-right:5px;}
+				section.countrydata div.zipdata button {width:20%;padding:5px;}
+				section.countrydata select {width:100%;padding:5px;}
+				section.countrydata p button.done {padding:5px;display:block;margin-left:auto;margin-top:10px;}
+				
+				@media screen and (max-width: 855px) {
+					section.countrydata p {font-size: 15px;}
+				}
+			</style>
+			<!--loadin animation first-->
+			<h3>Choose your location</h3>
+			<section>
+				<p>Delivery optioons and delivery speed may vary for different location</p>
+				<a class='signin' href='ecommerce-sign-in.html'>Sign in to see your address</a>
+				<p class='enterzip'><span>or enter a US zip code</span></p>
+				<div class='zipdata'>
+					<input>
+					<button>apply</button>
+				</div>
+				<p>This zip code isn't currently available. try again later</p>
+				<p class='or'><span>or</span></p>
+				<select>
+					<option>Your Country</option>
+					<option>Australia</option>
+					<option>Canada</option>
+					<option>China</option>
+					<option>Japan</option>
+					<option>Mexico</option>
+					<option>Singapore</option>
+					<option>United Kingdom</option>
+				</select>
+				<p><button class='done comingsoon'>Done</button></p>
+			</section>
+		</section>
+		
+		<section class='languagedata'>
+			<style>
+				section.languagedata {
+					display:none;
+					position:fixed;
+					border: 1px solid green;
+					width:20%;margin-left:60%;
+					background-color:white;
+					z-index:2;padding:10px;
+				}
+				section.languagedata h3, section.languagedata select, section.languagedata a {margin-bottom:10px;}
+				section.languagedata a {display:block;text-align:center;}
+				section.languagedata select {padding:5px;}
+			</style>
+			<h3>Change language</h3>
+			<select>
+				<option>English - EN</option>
+				<option>espanol - ES</option>
+				<option>Deutsch - DE</option>
+			</select>
+			<h3>Change currency</h3>
+			<select>
+				<option>USD - US Dollar</option>
+				<option>NG - Naira</option>
+				<option>GBP - British Pound</option>
+			</select>
+			<a class='comingsoon' style='text-decoration:underline;'>change region</a>
+		</section>
+		
+		<section class='userdata'>
+			<style>
+				section.userdata {
+					display:none;
+					position:fixed;
+					border: 1px solid green;
+					width:20%;margin-left:70%;
+					background-color:white;
+					z-index:2;padding:10px;line-height:1.7;
+				}
+				section.userdata p {text-align:center;}
+				section.userdata p.login a {padding: 5px 20px;color:white;background-color:black;}
+				section.userdata div.details {
+					border: 1px solid black;margin:5px;padding:5px;border-radius:5px;
+				}
+				
+				section.userdata div.details  p {
+					text-align:left;
+				}
+				
+				@media screen and (max-width: 855px) {
+					section.userdata {
+						width:30%;margin-left:60%;
+					}
+				}
+				
+				@media screen and (max-width: 550px) {
+					section.userdata { bottom:0;width:100%;margin-left:0;box-sizing:border-box;border-radius: 20px 20px 0 0;}
+				}
+			</style>
+			<p class='login comingsoon'><a>Log in</a></p>
+			<p class='comingsoon'>New customer? <a>sign up</a></p>
+			<div class='details'>
+				<h3>Your Account</h3>
+				<p><a class='comingsoon'>Account</a></p>
+				<p><a class='comingsoon'>Orders</a></p>
+				<p><a class='comingsoon'>Recommendations</a></p>
+				<p><a class='comingsoon'>Browsing History</a></p>
+			</div>
+		</section>
+		
+		<section class='navbody'>
+			<style>
+				section.navbody {
+					display:none;
+					position:fixed;top:0;
+					border: 1px solid green;
+					width:40%;font-size:20px;height:100%;
+					background-color:white;
+					z-index:4;padding:10px 0px;line-height:1.7;
+				}
+				
+				section.navbody div {
+					background-color:white;
+					border-bottom:10px solid silver;
+					padding:0 10px;
+				}
+				
+				section.navbody span {float: right;}
+				
+				section.navbody div a {display: block;}
+				
+				@media screen and (max-width: 755px) {
+					section.navbody {width:70%;}
+				}
+				
+			</style>
+			<div class='comingsoon'>
+				<p><small>Country</small></p>
+				<p>Nigeria <span>&rarr;</span></p>
+			</div>
+			<div class='comingsoon'>
+				<p><small>Language</small></p>
+				<p>English <span>&rarr;</span></p>
+			</div>
+			<div class='comingsoon'>
+				<p><small>Categories</small></p>
+				<a>electronics</a>
+				<a>fashion</a>
+				<a>furniture</a>
+				<A>handmade</a>
+				<a>healthcare</a>
+				<a>Services</a>
+				<a>Toys</a>
+			</div>
+		</section>
+		
+		<main>
+			<section class='deals'>
+				<img src='shop1.jpg' class='comingsoon'>
+				<img src='shop.png' class='comingsoon'>
+				<img src='shop2.png' class='comingsoon'>
+			</section>
+			
+			<section class='featured'>
+				<div class='comingsoon'>
+					<h2>Health &nbsp;<a>view more</a></h2>
+					<img src='healthcare.jpeg'>
+				</div>
+				<div class='comingsoon'>
+					<h2>Men's wear &nbsp;<a>view more</a></h2>
+					<img src='men.jpeg'>
+				</div>
+				<div class='comingsoon'>
+					<h2>Computer &nbsp;<a>view more</a></h2>
+					<img src='computer.jpeg'>
+				</div>
+			</section>
+			
+			<section class='foryou'>
+				<h2><a>Deals for you</a></h2>
+				<section>
+					<div class='content comingsoon'>
+						<img src='camera.jpeg'>
+						<div>
+							<p class='off'><span>-20%</span> </p>
+							<p class='price'>
+								<span><sup>$</sup>119<sup>10</sup></span>
+								<small class='prev'>$100</small>
+							</p>
+							<p class='desc'>4k LCED camera </p>
+						</div>
+					</div>
+					<div class='content comingsoon'>
+						<img src='kitchen.jpeg'>
+						<div>
+							<p class='off'> <span>-20%</span> </p>
+							<p class='price'>
+								<span><sup>$</sup>119<sup>10</sup></span>
+								<small>$100</small>
+							</p>
+							<p class='desc'>Kitchenware</p>
+						</div>
+					</div>
+					<div class='content comingsoon'>
+						<img src='tv.jpeg'>
+						<div>
+							<p class='off'><span>-20%</span> </p>
+							<p class='price'>
+								<span><sup>$</sup>119<sup>10</sup></span>
+								<small>$100</small>
+							</p>
+							<p class='desc'>Smart TV</p>
+						</div>
+					</div>
+					<div class='content comingsoon'>
+						<img src='toy.jpeg'>
+						<div>
+							<p class='off'><span>-20%</span> </p>
+							<p class='price'>
+								<span><sup>$</sup>119<sup>10</sup></span>
+								<small>$100</small>
+							</p>
+							<p class='desc'>Teddy bear</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			
+			<section class='categories'>
+				<h2>Categories</h2>
+				<div>
+					<a class='comingsoon'>
+						<img src='electronics.jpeg'>
+						<h3>Electronics</h3>
+					</a>
+					<a class='comingsoon'>
+						<img src='fashionp.jpeg'>
+						<h3>Fashion</h3>
+					</a>
+					<a class='comingsoon'>
+						<img src='furniture.jpeg'>
+						<h3>Furniture</h3>
+					</a>
+					<a class='comingsoon'>
+						<img src='handmade.jpeg'>
+						<h3>Handmade</h3>
+					</a>
+					<a class='comingsoon'>
+						<img src='medicine.jpeg'>
+						<h3>Healthcare</h3>
+					</a>
+					<a class='comingsoon'>
+						<img src='toy.jpeg'>
+						<h3>Toys</h3>
+					</a>
+					<a class='last comingsoon'>
+						<img src='services.jpeg'>
+						<h3>Services</h3>
+					</a>
+				</div>
+			</section>
+			
+			<section class='filters'>
+				<h2>Filters</h2>
+				<div class='link'>
+					<h3 class='a'>fashion under $10</h3>
+					<h3 class='b'>children's toy under $40</h3>
+					<h3 class='c'>Popular phones under $500</h3>
+				</div>
+				<section>
+					<div class='a'>
+						<h3 class='title'><a>fashion under $10</a></h3>
+						<img src='fashion1.jpeg' class='comingsoon'>
+						<img src='fashion2.jpeg' class='comingsoon'>
+						<img src='fashion3.jpeg' class='comingsoon'>
+						<img src='fashion4.jpeg' class='comingsoon'>
+					</div>
+					<div class='b' >
+						<h3 class='title'><a>children's toy under $40</a></h3>
+						<img src='toy1.jpeg' class='comingsoon'>
+						<img src='toy2.jpeg' class='comingsoon'>
+						<img src='toy3.jpeg' class='comingsoon'>
+						<img src='toy4.jpeg' class='comingsoon'>
+					</div>
+					<div class='c' >
+						<h3 class='title'><a>Popular phones under $500</a></h3>
+						<img src='phone1.jpeg' class='comingsoon'>
+						<img src='phone2.jpeg' class='comingsoon'>
+						<img src='phone3.jpeg' class='comingsoon'>
+						<img src='phone4.jpeg' class='comingsoon'>
+					</div>
+				</section>
+			</section>
+			
+		</main>
+		
+		<footer class='a'>
+			<section>
+				<h2>About us</h2>
+				<p><a class='comingsoon'>career</a></p>
+				<p><a class='comingsoon'>blog</a></p>
+				<p><a class='comingsoon'>investors</a></p>
+			</section>
+			<section>
+				<h2>Become a partner</h2>
+				<p><a class='comingsoon'>sell products</a></p>
+				<p><a class='comingsoon'>affiliate</a></p>
+				<p><a class='comingsoon'>advertise with us</a></p>
+			</section>
+			<section>
+				<h2>our payment product</h2>
+				<p><a class='comingsoon'>Gift cards</a></p>
+				<p><a class='comingsoon'>coins</a></p>
+				<p><a class='comingsoon'>Currency converter</a></p>
+				<p><a class='comingsoon'>Business card</a></p>
+			</section>
+			<section>
+				<h2>Help</h2>
+				<p><a class='comingsoon'>orders</a></p>
+				<p><a class='comingsoon'>shipping rates and policy</a></p>
+				<p><a class='comingsoon'>returns and replacement</a></p>
+			</section>
+		</footer>
+		
+		<footer class='b'>
+			<a class='comingsoon'>english</a>
+			<a class='comingsoon'>usd - us dollar</a>
+			<a class='comingsoon'>english</a>
+			<div>
+				<i class='fa fa-facebook comingsoon'></i>
+				<i class='fa fa-twitter comingsoon'></i>
+				<i class='fa fa-instagram comingsoon'></i>
+			</div>
+		</footer>
+		
+		<footer class='c'>
+			<section class='otherservices'>
+				<h2>Other services</h2>
+				<div>
+					<a class='comingsoon'><img src='bukanaija.png'></a>
+					<a class='comingsoon'><img src='bookify.png'></a>
+					<a class='comingsoon'><img src='evergreen.png'></a>
+				</div>
+			</section>
+			
+			<section class='privacy'>
+				<div>
+					<a class='comingsoon'>condition of use</a>
+					<a class='comingsoon'>privacy policy</a>
+					<a class='comingsoon'>ads setting</a>
+				</div>
+				<p>&copy; 1990 - 2022 shopside, inc or its affiliate</p>
+			</section>
+		</footer>
+		<style>
+			@media screen and (max-width: 1000px) {
+				header img.logo {height:35px;}
+				
+				header div.form select { padding: 8px;font-size: 15px;}
+			
+				header div.form input, section div.form input {padding:8px;font-size: 15px;}
+			
+				header div.form button, section div.form button {padding:8px;font-size: 15px;}
+			
+				header div.link {font-size: 15px;}
+			
+				header div.link a {padding: 8px;}
+			
+				header div.link i.i {padding: 8px;}
+				
+			}
+			
+			
+			@media screen and (max-width: 855px) {
+				header div.form select{display: none;}
+				section.featured {overflow-x:scroll;}
+				section.featured div {width: 45%;margin-right:10px;}
+				
+				h2{font-size:18px;}
+				h3 {font-size: 16px;}
+				
+				section.categories div {flex-wrap:wrap;overflow-x:hidden;}
+				section.categories div a {margin-right:auto;margin-bottom:10px;}
+				section.categories div a img {width: 30vw;height:30vh;}
+				
+				section.filters div.link {display:none;}
+				section.filters section h3.title {display: block;width:100%;margin-bottom:5px;}
+				section.filters section div.b,section.filters section div.c {display:flex;}
+			}
+			
+			@media screen and (max-width: 755px) {
+				.fa-bars {display:block;font-size:25px;padding-top:7px;margin-right:auto;}
+				
+				header {padding: 5px 10px;}
+				
+				header div.link.country, header div.link.language {display: none;}
+				
+				header div.link.user {margin-right: 10px;}
+				
+				header div.link {font-size: 19px;}
+				
+				nav a {font-size: 15px;padding: 10px;}
+				
+				nav a.categories {display: none;}
+				
+			}
+			
+			@media screen and (max-width: 650px){
+				section.foryou section div.content {width: 100%;}
+				header div.form input {width: 220px;}
+			}
+			
+			@media screen and (max-width: 550px) {
+				header div.form {display: none;}
+				header div.link i.i {display: none;}
+				nav {overflow-x:scroll;justify-content: left;}
+				nav a {flex-shrink:0;}
+				section.featured div img{height:30vh;}
+				section.featured div h2 {text-align: center;}
+				section.featured div h2 a {display: none;}
+				
+				section div.form {display: flex;padding:10px;}
+				
+				section.foryou section div.content div{padding-left: 10px;}
+				section.foryou section div.content img {width:80px;height:80px;}
+				section.foryou section div.content div p.price {font-size: 25px;}
+				
+				section.categories div a img, section.filters section div img {width: 43vw;}
+				section.filters section div img {margin-right:0;margin:auto;margin-bottom:10px;}
+				
+				footer.a {flex-wrap:wrap;padding:10px;}
+				footer.a section {width:45%;margin-bottom:15px;}
+				
+				footer.b {flex-direction: column;padding:10px;text-align:center;}
+				footer.b a {font-size:17px;margin-bottom:5px;}
+				footer.b i {margin-right:10px;}
+			}
+			
+			@media screen and (max-width: 350px) {
+				footer.a section {width:100%;}
+			}
+			
+			@media screen and (max-width: 310px) {
+				section.categories div a img, section.filters section div img {width: 40vw;}
+			}
+		</style>
+		<script>
+			let countrydropdown = document.querySelector('header div.link.country i');
+			let countrydata = document.querySelector('section.countrydata');
+			let languagedropdown = document.querySelector('header div.link.language i');
+			let languagedata = document.querySelector('section.languagedata');
+			let userdropdown = document.querySelector('header div.link.user i.down');
+			let userdata = document.querySelector('section.userdata');
+			
+			let close = document.querySelector('div.close');
+			let close2 = document.querySelector('div.close2');
+			let searchcatdropdown = document.querySelector('header div.form select');
+			let searchinput = document.querySelectorAll('section div.form input, header div.form input');
+			let filterslink = document.querySelectorAll('section.filters div.link h3');
+			let filterscontent = document.querySelectorAll('section.filters section div');
+			
+			let bars = document.querySelector('.fa-bars');
+			let navcategory = document.querySelector('nav a.categories');
+			let navbody = document.querySelector('section.navbody');
+			bars.onclick = function(){
+				navbody.style.display = 'block';
+				close.style.display = 'block'
+				close2.style.display = 'block'
+			}
+			navcategory.onclick = function(){
+				navbody.style.display = 'block';
+				close.style.display = 'block'
+				close2.style.display = 'block'
+			}
+			
+			countrydropdown.onclick = function(){
+				//if(!navigator.onLine) {alert('not online');}
+				countrydata.style.display = 'block';
+				close.style.display = 'block';
+			}
+			
+			languagedropdown.onclick = function(){
+				languagedata.style.display = 'block';
+				close.style.display = 'block';
+			}
+			
+			
+			userdropdown.onclick = function(){
+				userdata.style.display = 'block';
+				close.style.display = 'block';
+			}
+			
+			close.onclick = function (){
+				countrydata.style.display = 'none';
+				languagedata.style.display = 'none';
+				userdata.style.display = 'none';
+				navbody.style.display = 'none';
+				close.style.display = 'none'
+			}
+			
+			close2.onclick = function (){
+				countrydata.style.display = 'none';
+				languagedata.style.display = 'none';
+				userdata.style.display = 'none';
+				navbody.style.display = 'none';
+				close2.style.display = 'none'
+				close.style.display = 'none'
+			}
+			
+			searchcatdropdown.onchange = function(){
+				searchinput.focus();
+				close.style.display = 'block';
+			}
+			
+			for(let i=0; i<searchinput.length; i++){
+				searchinput[i].onclick = function(e){
+					close.style.display = 'block';
+				}
+			}
+			
+			for(let i=0; i<filterslink.length; i++){
+				filterslink[i].onclick = function(e){
+					for(let b=0; i<filterscontent.length; b++){
+						if(e.target.className == filterscontent[b].className){
+							filterscontent[b].style.display = 'flex'
+							
+						} else {
+							filterscontent[b].style.display = 'none'
+						}
+					}
+				}
+				filterslink[i].onclick = function(e){
+					for(let i=0; i<filterslink.length; i++){
+						filterslink[i].style.border = '0px solid white'
+					}
+					e.target.style.border = '1px solid black'
+				}
+			}
+			
+			let comingsoon = document.querySelectorAll('.comingsoon');
+			for(let i=0; i<comingsoon.length; i++){
+				comingsoon[i].onclick = function(){
+					alert('feature coming soon');
+				}
+			}
+		</script>
+	</body>
+</html>
