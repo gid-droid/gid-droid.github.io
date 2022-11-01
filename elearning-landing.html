@@ -1,0 +1,390 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>elearning landing page</title>
+		<script src="https://kit.fontawesome.com/8a033393a6.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body, article, section, nav, div, header, footer, h1, h2, h3 {margin: 0;padding: 0;background-color:transparent;}
+			
+			
+			html, body {box-sizing:border-box;}
+			
+			body {background-color: white;padding:30px;font-family:serif;}
+			
+			header {display: flex;flex-direction:row;border:1px solid black;}
+			
+			header a.logo {margin-right:auto;}
+			
+			img.logo {width:70px;height:70px;}
+			
+			nav {
+				flex-direction:row;
+				width:70%;
+				padding: 20px;
+				background-color: black;
+				color:white;
+				border-top-left-radius:40px;border-bottom-left-radius:40px;
+				font-size: 25px;
+			}
+			
+			nav section {
+				display:flex;flex-direction:row;
+				width:70%;
+			}
+			
+			nav section a {
+				margin: auto;
+			}
+			
+			nav section a:hover {
+				text-decoration: underline;
+			}
+			
+			nav input {width:30%;border-radius: 20px;outline:none;padding-left:10px;padding-right:10px;}
+			
+			nav input:focus {
+				border: 1px solid black;
+			}
+			
+			nav input:first-child {display: none;}
+			
+			.fa-bars {display:none;}
+			
+			main {
+				display: flex;flex-direction:row;
+				padding-top: 40px;
+			}
+			
+			
+			main section.a {
+				width:47%;margin-right:auto;
+			}
+			
+			main section.b {
+				width:47%;margin-left:auto;
+			}
+			
+			main section.b img {height: 80vh;width:100%;}
+			h3 {
+				font-size: 40px;
+			}
+			
+			h2 {
+				font-size: 80px;
+			}
+			
+			h1 {
+				font-size: 125px;
+			}
+			
+			p {font-size: 20px;}
+			
+			p.link {
+				display:flex;flex-direction:row;
+			}
+			
+			p a {
+				font-size: 25px;
+				padding: 5px 20px;margin-right: 10px;
+				border: 1px solid black;
+				border-radius: 20px;
+			}
+			
+			p.link a.sign {
+				color:white;
+				background-color:black;
+				box-shadow: 5px 5px 5px black;
+			}
+			
+			p.socials {
+				margin-top: 70px;
+			}
+			
+			p.socials i, .fa-comment {
+				margin-right: 10px;
+				margin-bottom: 5px;
+				padding:5px 8px;
+				border: 1px solid black;
+				border-radius: 50%;
+			}
+			
+			p.socials i:hover {
+				color:white;
+				background-color: black;
+			}
+			
+			.fa-comment {
+				position: fixed;
+				font-size: 50px;
+				right: 40px;
+				bottom: 40px;
+				padding:10px 16px;
+				color:white;background-color:black;
+			}
+			
+			.fa-comment:hover {
+				color: black;background-color:white;
+			}
+			
+			.comingsoon {cursor:pointer;}
+		</style>
+		
+	</head>
+	<body id='body'>
+		<div class='close' style='display:none;position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:1;'></div>
+		<article>
+			<header>
+				<a href='elearning-landing.html' class='logo'><img class='logo' src='evergreen.png'></a>
+				<nav>
+					<input type='search' placeholder='   search courses'>
+					<section>
+						<a class='comingsoon'>home</a>
+						<a class='comingsoon'>about</a>
+						<a class='comingsoon'>promotions</a>
+						<a class='comingsoon'>courses</a>
+					</section>
+					<input type='search' placeholder='   search courses'>
+				</nav>
+				<i class='fa fa-bars'></i>
+			</header>
+			
+			<main>
+				<section class='a'>
+					<h3>convenience</h3>
+					<h1>Learn</h1>
+					<h2>at your own pace</h2>
+					<p>Choose from thousands of available courses covering every topics you can imagine. Learn, monitor progress and earn certificates that'll put above your competitions. </p>
+					<p><small>Get 1000 coins when you purchase your first course.</small></p>
+					<p class='link'>
+						<a class='sign comingsoon'>Sign Up</a>
+						<a class='comingsoon'>Become A Partner</a>
+					</p>
+					<p class='socials' >
+						<i class='fa fa-instagram comingsoon'></i>
+						<i class='fa fa-facebook comingsoon'></i>
+						<i class='fa fa-twitter comingsoon'></i>
+						<i class='fa fa-whatsapp comingsoon'></i>
+						<i class='fa fa-linkedin comingsoon'></i>
+					</p>
+				</section>
+				<section class='b'>
+					<img src='clothing-m.png'>
+					<i class='fa fa-comment comingsoon'></i>
+				</section>
+				
+				<style>
+					@media screen and (max-width: 1120px) {
+						h1 {
+							font-size: 95px;
+						}
+						h2 {
+							font-size: 70px;
+						}
+					}
+					
+					@media screen and (max-width: 1025px) {
+						h1 {
+							font-size: 85px;
+						}
+						h2 {
+							font-size: 70px;
+						}
+					}
+					
+					@media screen and (max-width: 950px) {
+						body {
+							padding: 10px;
+						}
+						nav {
+							font-size: 20px;
+							padding:10px;
+						}
+						img.logo {width:70px;height:50px;}
+					}
+					
+					@media screen and (max-width: 890px) {
+						main {
+							flex-direction:column;
+							padding-top:10px;
+						}
+						main section.a {
+							order:2;
+							width: 100%;
+							padding: 10px;
+							box-sizing:border-box;
+						}
+						main section.b {
+							order: 1;
+							width: 100%;
+							box-sizing:border-box;
+						}
+						main section.b img {
+							height: 50vh;
+						}
+						h1 {
+							font-size: 95px;
+						}
+						
+					}
+					
+					@media screen and (max-width: 800px) {
+						body {
+							padding: 0px;
+						}
+						.fa-bars {
+							display: block;
+							padding: 5px;
+							font-size: 35px;
+						}
+						nav {
+							position: absolute;
+							right:0;
+							flex-direction:column;
+							height: 80vh;
+							color:black;
+							background-color: white;
+							padding-top: 30px;
+							z-index: 2;
+						}
+						nav section {
+							flex-direction: column;width:auto;
+						}
+						
+						nav section a {
+							display: block;
+							width: 100%;
+							text-align:center;
+							margin-bottom: 20px;
+							font-size: 25px;
+						}
+						
+						nav input {
+							width:95%;display:block;margin: auto;padding:10px;
+							border-radius: 20px;outline:none;
+							padding-left:10px;padding-right:10px;
+						}
+						
+						nav input:first-child {display: block;margin-bottom: 10px;}
+						
+						nav input:last-child { display: none;}
+						
+					}
+					@media screen and (max-width: 505px) {
+						.fa-comment {
+							right: 30px;
+							bottom: 30px;
+						}
+						
+						p.socials {
+							margin-top: 40px;
+						}
+					}
+					
+					@media screen and (max-width: 475px) {
+						h1 {
+							font-size: 85px;
+						}
+						h2 {
+							font-size: 70px;
+						}
+						h3 {
+							font-size: 50px;
+						}
+						nav {
+							font-size: 16px;
+						}
+						
+						p, p a {font-size: 16px;}
+					}
+					
+					@media screen and (max-width: 425px) {
+						h1 {
+							font-size: 75px;
+						}
+						h2 {
+							font-size: 60px;
+						}
+						h3 {
+							font-size: 50px;
+						}
+					}
+					
+					@media screen and (max-width: 375px) {
+						h1 {
+							font-size: 65px;
+						}
+						h2 {
+							font-size: 50px;
+						}
+						h3 {
+							font-size: 40px;
+						}
+						p.link {
+							flex-direction: column;
+							text-align:center;
+						}
+						p.link a {margin-bottom: 20px;}
+						
+						.fa-comment {
+							right: 20px;
+							bottom: 30px;
+							font-size: 30px;
+						}
+						
+						p.socials {
+							margin-top: 20px;
+						}
+					}
+					
+					@media screen and (max-width: 320px) {
+						h1 {
+							font-size: 50px;
+						}
+						h2 {
+							font-size: 40px;
+						}
+						h3 {
+							font-size: 20px;
+						}
+					}
+				</style>
+			</main>
+		</article>
+		<script>
+			let bars = document.querySelector('.fa-bars');
+			let nav = document.querySelector('nav');
+			let close = document.querySelector('div.close');
+			
+			function query(x) {
+				if(x.matches){
+					nav.style.display = 'none'
+				} else {
+					nav.style.display = 'flex'
+				}
+			}
+			let x = window.matchMedia('(max-width: 800px)');
+			query(x)
+			x.addListener(query)
+			
+			bars.onclick = function(){
+				nav.style.display = 'block';
+				close.style.display = 'block'
+				body.style.overflowY = 'hidden'
+			}
+			
+			close.onclick = function(){
+				nav.style.display = 'none';
+				close.style.display = 'none'
+				body.style.overflowY = 'scroll'
+			}
+			
+			let comingsoon = document.querySelectorAll('.comingsoon');
+			for(let i=0; i<comingsoon.length; i++){
+				comingsoon[i].onclick = function(){
+					alert('feature coming soon');
+				}
+			}
+		</script>
+	</body>
+</html>

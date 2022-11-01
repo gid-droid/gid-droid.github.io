@@ -1,0 +1,186 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>ecommerce landing page</title>
+		<script src="https://kit.fontawesome.com/8a033393a6.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body, article, section, nav, div, header, footer, h1, h2, h3 {margin: 0;padding: 0;background-color:transparent;}
+			
+			body {font-family: serif;}
+			
+			article {background-color: white;}
+			
+			header {
+				display: flex;flex-direction:row;
+				padding-left:80px;padding-right:80px;
+				font-size: 25px;
+			}
+			
+			header a.logo {margin-right: auto;}
+			
+			header img {width:80px;height:50px;}
+			
+			header nav {display:flex;flex-direction:row;width:50%;}
+			
+			header nav a {
+				margin: auto;padding:5px;
+			}
+			
+			header nav a:hover {
+				border-bottom: 1px solid black;
+			}
+			
+			header nav a.get {
+				padding-left: 30px;padding-right:30px;
+				color:white;background-color:black;
+			}
+			
+			main {
+				border: 1px solid black;
+				background-image: url(book.png);background-size:300px 300px;
+				height:90vh;
+			}
+			
+			main section {
+				width: 70%;
+				margin:auto;margin-top:7%;
+				padding-top:30px;padding-bottom:10px;
+				background-color: pink;color:black;
+				background-image: url(frames/frame2.jpg);background-size:100% 100%;
+			}
+			
+			main section div {
+				width: 60%;margin:auto;
+				text-align: center;
+			}
+			
+			h1 {
+				font-size: 60px;
+			}
+			
+			p {
+				font-size: 25px;
+			}
+			
+			p.link a {
+				display: block;padding: 5px;
+				border: 1px solid black;
+				color:white;background-color: black;
+			}
+			
+			.fa-ellipsis-v {display:none;}
+			
+			header section {
+				display: none;
+				position: absolute;
+				width: 70%;
+				padding:5px;
+				background-color: white;
+				border: 1px solid orange;
+				left: 0;z-index: 2;font-size: 25px;
+			}
+			
+			header section a{
+				display: block;
+				border: 1px solid green;
+				padding: 5px;margin-bottom:10px;
+			}
+			
+			.comingsoon {cursor:pointer;}
+		</style>
+	</head>
+	<body>
+		<div class='close' style='display:none;position:absolute;height:100%;width:100%;background-color:rgba(0,0,0,0.5);z-index:1;'></div>
+		<article>
+			<header>
+				<i class='fa fa-ellipsis-v'></i>
+				<a href='ecommerce-landing.html' class='logo'><img class='logo' src='bookify.png'></a>
+				<nav>
+					<a class='comingsoon'>home</a>
+					<a class='comingsoon'>categories</a>
+					<a class='get comingsoon'>Sign up</a>
+				</nav>
+				<section>
+					<a class='comingsoon'>home</a>
+					<a class='comingsoon'>categories</a>
+				</section>
+			</header>
+			
+			<main>
+				<section>
+					<div>
+						<h1>Shop Now. Get your products now.</h1>
+						
+						<p>Get up to 5-10% on any book you buy. With free shipping.</p>
+						
+						<p>TIME LEFT: <small>2h: 5m: 20s</p>
+						
+						<p class='link'><a class='comingsoon'>Sign up</a></p>
+						
+						<p class='login'><a style='text-decoration:underline;' class='comingsoon'>log in</a> </p>
+					</div>
+				</section>
+			</main>
+		</article>
+		<style>
+			@media screen and (max-width: 990px) {
+				main section {width: 80%;}
+			}
+			
+			@media screen and (max-width: 850px) {
+				main section div {width: 70%;}
+				.fa-ellipsis-v  {display:block;margin-right:auto;padding-top:14px;}
+				header nav a:not(:last-child) {display: none;}
+				header nav {width: auto;}
+			}
+			
+			@media screen and (max-width: 720px) {
+				header {padding-left:20px;padding-right:20px;}
+				
+				h1 {font-size: 50px;}
+				p {font-size: 20px;}
+			}
+			
+			@media screen and (max-width: 600px) {
+				header {font-size: 20px;}
+				header nav a.get {padding-left:10px;padding-right:10px;}
+			}
+			
+			@media screen and (max-width: 500px){
+				main section {width: 85%;}
+				main section div {width: 80%;}
+				
+			}
+			
+			@media screen and (max-width: 370px) {
+				header {padding-left:10px;padding-right:10px;font-size:16px;}
+				.fa-ellipsis-v {font-size: 20px;}
+				h1 {font-size: 40px;}
+				p {font-size: 16px;}
+			}
+		</style>
+		<script>
+			let bars = document.querySelector('.fa-ellipsis-v');
+			let nav = document.querySelector('header section');
+			let close = document.querySelector('div.close');
+			
+			bars.onclick = function(){
+				nav.style.display = 'block';
+				close.style.display = 'block';
+			}
+			
+			close.onclick = function(){
+				nav.style.display = 'none';
+				close.style.display = 'none';
+			}
+			
+			let comingsoon = document.querySelectorAll('.comingsoon');
+			for(let i=0; i<comingsoon.length; i++){
+				comingsoon[i].onclick = function(){
+					alert('feature coming soon');
+				}
+			}
+		</script>
+	</body>
+</html>
